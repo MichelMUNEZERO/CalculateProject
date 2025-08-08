@@ -1,0 +1,107 @@
+/* Light Mode Variables (default) */
+:root {
+  --bg-color: aqua;
+  --text-color: black;
+  --button-bg: white;
+  --button-text: black;
+}
+
+/* Dark Mode Variables */
+body.dark-mode {
+  --bg-color: #1a1a1a;
+  --text-color: white;
+  --button-bg: #333;
+  --button-text: white;
+}
+
+/* General Page Styling */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  margin: 0;
+}
+
+/* Container for Buttons */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px;
+  max-width: 300px;
+}
+
+/* Buttons Styling */
+button {
+  width: 60px;
+  height: 40px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  border: 1px solid var(--text-color);
+}
+
+/* Output & Input Display */
+.output,
+.input {
+  margin-bottom: 10px;
+  background: var(--button-bg);
+  color: var(--button-text);
+  padding: 10px;
+  width: 280px;
+  text-align: right;
+  font-size: 18px;
+  border: none;
+  font-weight: bold;
+  font-size: 24px;
+  box-sizing: border-box;
+
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+  border-radius: 10px;
+}
+
+/* Theme Toggle Button */
+#theme-toggle {
+  margin-bottom: 15px;
+  width: auto;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 20px;
+}
+.container button {
+  transition: background-color 0.3s, color 0.3s;
+  border-radius: 27px;
+  border: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+.container button:hover {
+  background-color: var(--button-text);
+  color: var(--button-bg);
+}
+.container button:active {
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+/* Responsive Design */
+@media (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
+  .container {
+    max-width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+  button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
