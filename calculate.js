@@ -7,6 +7,8 @@ document.getElementById("theme-toggle").onclick = function () {
   }
 };
 
+let memory = 0; // Declare memory here, outside the listener
+
 let outPut = document.querySelector(".output");
 let inPut = document.querySelector(".input");
 let buttons = document.querySelectorAll(".container button");
@@ -33,6 +35,14 @@ buttons.forEach((button) => {
       } catch (error) {
         outPut.innerHTML = "Error";
       }
+    } else if (value === "M+") {
+      memory += parseFloat(outPut.innerHTML) || 0;
+    } else if (value === "M-") {
+      memory -= parseFloat(outPut.innerHTML) || 0;
+    } else if (value === "MR") {
+      inPut.innerHTML += memory.toString();
+    } else if (value === "MC") {
+      memory = 0;
     } else {
       inPut.innerHTML += value;
     }

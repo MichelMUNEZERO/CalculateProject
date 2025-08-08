@@ -22,6 +22,15 @@
       <button>Delete</button>
       <button>Turn Off</button>
       <button>Turn On</button>
+      <!-- Memory Buttons -->
+      <button>M+</button>
+      <button>M-</button>
+      <button>MR</button>
+      <button>MC</button>
+      <button>(</button>
+      <!-- Added -->
+      <button>)</button>
+      <!-- Added -->
       <button>1</button>
       <button>2</button>
       <button>3</button>
@@ -39,5 +48,19 @@
       <button>/</button>
       <button>=</button>
     </div>
+    <script>
+      let Memory = 0;
+      if (value === "M+") {
+        memory += parseFloat(inPut.innerHTML) || 0;
+      } else if (value === "M-") {
+        memory -= parseFloat(inPut.innerHTML) || 0;
+      } else if (value === "MR") {
+        inPut.innerHTML += memory.toString();
+      } else if (value === "MC") {
+        memory = 0;
+      } else {
+        inPut.innerHTML += value;
+      }
+    </script>
   </body>
 </html>
