@@ -27,6 +27,9 @@
       <button>M-</button>
       <button>MR</button>
       <button>MC</button>
+      <button>%</button>
+      <button>√</button>
+      <button>^</button>
       <button>(</button>
       <!-- Added -->
       <button>)</button>
@@ -48,19 +51,6 @@
       <button>/</button>
       <button>=</button>
     </div>
-    <script>
-      let Memory = 0;
-      if (value === "M+") {
-        memory += parseFloat(inPut.innerHTML) || 0;
-      } else if (value === "M-") {
-        memory -= parseFloat(inPut.innerHTML) || 0;
-      } else if (value === "MR") {
-        inPut.innerHTML += memory.toString();
-      } else if (value === "MC") {
-        memory = 0;
-      } else {
-        inPut.innerHTML += value;
-      }
-    </script>
+    <script></script>
   </body>
 </html>

@@ -35,6 +35,39 @@ buttons.forEach((button) => {
       } catch (error) {
         outPut.innerHTML = "Error";
       }
+    } else if (value === "%") {
+      try {
+        let currentValue = eval(inPut.innerHTML);
+        let percentValue = currentValue / 100;
+        outPut.innerHTML = percentValue;
+        inPut.innerHTML = percentValue.toString();
+      } catch (error) {
+        outPut.innerHTML = "Error";
+      }
+    } else if (value === "=") {
+      try {
+        // Replace √number with Math.sqrt(number)
+        let expression = inPut.innerHTML.replace(
+          /√(\d+(\.\d+)?)/g,
+          "Math.sqrt($1)"
+        );
+
+        // Replace ^ with **
+        expression = expression.replace(/\^/g, "**");
+
+        outPut.innerHTML = eval(expression);
+      } catch (error) {
+        outPut.innerHTML = "Error";
+      }
+    } else if (value === "=") {
+      try {
+        let expression = inPut.innerHTML
+          .replace(/√(\d+(\.\d+)?)/g, "Math.sqrt($1)")
+          .replace(/\^/g, "**");
+        outPut.innerHTML = eval(expression);
+      } catch (error) {
+        outPut.innerHTML = "Error";
+      }
     } else if (value === "M+") {
       memory += parseFloat(outPut.innerHTML) || 0;
     } else if (value === "M-") {
