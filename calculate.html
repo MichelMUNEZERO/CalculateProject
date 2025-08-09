@@ -51,6 +51,46 @@
       <button>/</button>
       <button>=</button>
     </div>
-    <script></script>
+    <script>
+      // number >= {...}
+      // number >=number*3;
+      class User {
+        constructor(name, age) {
+          this.name = name;
+          this.age = age;
+        }
+      }
+
+      const user1 = new User("Michel", 22);
+      console.log(user1);
+      const user2 = {
+        name: "John",
+        age: 30,
+      };
+      const margeObject = { ...user1, ...user2 };
+      console.log(margeObject);
+      const hobbies = ["Reading", "Gaming", "Hiking"];
+      hobbies.push("Cooking");
+      console.log(hobbies);
+      hobbies.pop();
+      console.log(hobbies);
+      const index = hobbies.findIndex((item) => {
+        return item === "Gaming";
+      });
+      console.log(hobbies.includes("Reading"));
+      console.log(hobbies.includes("Swimming"));
+      editableHobbies = hobbies.map((item) => {
+        return item + " is a hobby";
+      });
+      console.log(editableHobbies);
+      console.log(index);
+      const upperCaseHobbies = hobbies.map((item) => {
+        return item.toUpperCase();
+      });
+      console.log(upperCaseHobbies);
+      const newHobbies = ["Swimming", "Cycling"];
+      const allHobbies = [...hobbies, ...newHobbies];
+      console.log(allHobbies);
+    </script>
   </body>
 </html>
